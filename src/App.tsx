@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Download, Music, Youtube, FolderOpen, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import Navbar from './components/Navbar';
 
 interface DownloadStatus {
   status: 'idle' | 'downloading' | 'success' | 'error';
@@ -84,20 +85,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
+      <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="flex items-center justify-center mb-4">
-              <div className="bg-red-600 p-3 rounded-full mr-3">
-                <Youtube className="w-8 h-8 text-white" />
-              </div>
-              <div className="bg-blue-600 p-3 rounded-full">
-                <Music className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">
-              YouTube MP3 Downloader
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              Video İndirici
             </h1>
             <p className="text-gray-600 text-lg">
               YouTube videolarını MP3 formatında indirin
