@@ -86,7 +86,9 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
+      
+      {/* Ana Sayfa Bölümü */}
+      <section id="home" className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
@@ -187,17 +189,140 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Footer */}
-          <div className="text-center mt-8 text-gray-500">
-            <p className="text-sm">
-              Telif hakkı korumalı içerikleri indirmeden önce gerekli izinleri aldığınızdan emin olun.
-            </p>
+      {/* Hakkında Bölümü */}
+      <section id="about" className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Hakkında</h2>
+              <p className="text-gray-600 text-lg">YouTube MP3 Downloader hakkında bilgi edinin</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Nasıl Çalışır?</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start space-x-2">
+                    <span className="text-red-600 font-bold">1.</span>
+                    <span>YouTube video URL'sini kopyalayın</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-red-600 font-bold">2.</span>
+                    <span>URL'yi yukarıdaki alana yapıştırın</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-red-600 font-bold">3.</span>
+                    <span>"MP3 Olarak İndir" butonuna tıklayın</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-red-600 font-bold">4.</span>
+                    <span>İndirme tamamlanana kadar bekleyin</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Avantajlar</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>Ücretsiz kullanım</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>Yüksek ses kalitesi</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>Hızlı dönüştürme</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>Güvenli ve gizli</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* İletişim Bölümü */}
+      <section id="contact" className="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">İletişim</h2>
+              <p className="text-gray-600 text-lg">Sorularınız için bizimle iletişime geçin</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Ad Soyad
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-red-500 focus:ring-0 transition-colors duration-200"
+                    placeholder="Adınızı girin"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                    E-posta
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-red-500 focus:ring-0 transition-colors duration-200"
+                    placeholder="E-posta adresinizi girin"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Mesaj
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={5}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-red-500 focus:ring-0 resize-none transition-colors duration-200"
+                    placeholder="Mesajınızı yazın"
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+                >
+                  Mesaj Gönder
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
 
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <p className="text-gray-400 text-sm mb-4">
+              Telif hakkı korumalı içerikleri indirmeden önce gerekli izinleri aldığınızdan emin olun.
+            </p>
+            <p className="text-gray-500 text-xs">
+              © 2024 YouTube MP3 Downloader. Tüm hakları saklıdır.
+            </p>
+          </div>
+        </div>
+      </footer>
 export default App;

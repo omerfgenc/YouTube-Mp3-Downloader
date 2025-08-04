@@ -33,3 +33,8 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
